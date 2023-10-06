@@ -1,0 +1,3 @@
+Kaspersky:https://opentip.kaspersky.com/4EE9C066117EAB98E9CD22DFFE76EAD44FE7A413C7E075C4BA82EE32E7A7B3F9/static?tab=upload
+
+Virustotal:https://www.virustotal.com/gui/file/4ee9c066117eab98e9cd22dffe76ead44fe7a413c7e075c4ba82ee32e7a7b3f9/detection

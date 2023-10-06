@@ -1,0 +1,7 @@
+﻿  SCHALE GUI.cpp
+  .NETFramework,Version=v4.8.AssemblyAttributes.cpp
+  正在生成代码...
+SCHALE GUI.obj : warning LNK4258: 指令“/entry:mainCRTStartup”与开关“/ENTRY:main”不兼容；已忽略
+  SCHALE GUI.obj : 遇到了 MSIL 模块；对 MSIL 禁用了增量链接；正在执行完全链接
+SCHALE GUI.obj : warning LNK4258: 指令“/entry:mainCRTStartup”与开关“/ENTRY:main”不兼容；已忽略
+  SCHALE GUI.vcxproj -> C:\Users\Henry Z\Desktop\VI\Visual Studio\SCHALE GUI\x64\Release\SCHALE GUI.exe

@@ -1,0 +1,3 @@
+C:\Users\Henry Z\Desktop\VI\Visual Studio\SCHALE GUI\SCHALE GUI\x64\Release\SCHALE GUI.vcxproj.AssemblyReference.cache
+C:\Users\Henry Z\Desktop\VI\Visual Studio\SCHALE GUI\SCHALE GUI\x64\Release\SCHALEGUI.SCHALE GUI.resources
+C:\Users\Henry Z\Desktop\VI\Visual Studio\SCHALE GUI\SCHALE GUI\x64\Release\SCHALE GUI.vcxproj.GenerateResource.cache

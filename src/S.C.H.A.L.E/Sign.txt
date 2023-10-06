@@ -1,0 +1,2 @@
+signtool sign -fd SHA256 -f SCHALE.pfx /p S.C.H.A.L.E S.C.H.A.L.E.exe
+signtool timestamp /t http://timestamp.comodoca.com/authenticode S.C.H.A.L.E.exe
