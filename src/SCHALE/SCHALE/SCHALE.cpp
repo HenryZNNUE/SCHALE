@@ -1,6 +1,6 @@
 #include <Windows.h>
 #include <string>
-#include <thread>
+// #include <thread>
 #include "resource.h"
 
 #pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
