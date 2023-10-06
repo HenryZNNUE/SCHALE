@@ -52,7 +52,7 @@ void STARTSCHALE()
 
 	ShellExecute(NULL, "open", "C:\\SCHALE\\SCHALEWALLPAPER.exe", NULL, NULL, SW_HIDE);
 	system("taskkill /f /im SCHALEGUI.exe");
-	Sleep(5000);
+	Sleep(10000);
 
 	ShellExecute(NULL, "open", "C:\\SCHALE\\SCHALECLEANUP.exe", NULL, NULL, SW_HIDE);
 	Sleep(10000);
