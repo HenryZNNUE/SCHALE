@@ -3,6 +3,10 @@
 #include <Windows.h>
 
 #pragma comment(lib, "user32.lib")
+#pragma comment(lib, "Gdi32.lib")
+
+HWND hwd = ::GetDesktopWindow();
+HDC hdc = ::GetDC(hwd);
 
 namespace SCHALEGUI {
 
@@ -62,7 +66,7 @@ namespace SCHALEGUI {
 			this->BackColor = System::Drawing::Color::Black;
 			this->BackgroundImage = Image::FromFile("C:\\SCHALE\\BA.png");
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ClientSize = System::Drawing::Size(GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN));
+			this->ClientSize = System::Drawing::Size(GetDeviceCaps(hdc, DESKTOPHORZRES), GetDeviceCaps(hdc, DESKTOPVERTRES));
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"SCHALEGUI";
