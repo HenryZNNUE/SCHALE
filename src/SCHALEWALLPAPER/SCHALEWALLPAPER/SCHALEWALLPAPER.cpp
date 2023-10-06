@@ -19,10 +19,13 @@ BOOL CALLBACK EnumWinProc(_In_ HWND hwnd, _In_ LPARAM lparam)
 
 void SCHALEWALLPAPER()
 {
+	HWND hwd = ::GetDesktopWindow();
+	HDC hdc = ::GetDC(hwd);
+
 	std::string p1 = "C:\\SCHALE\\ffplay.exe C:\\SCHALE\\SCHALE.mp4 -noborder -x ";
-	std::string p2 = std::to_string(GetSystemMetrics(SM_CXSCREEN));
+	std::string p2 = std::to_string(GetDeviceCaps(hdc, DESKTOPHORZRES));
 	std::string p3 = " -y ";
-	std::string p4 = std::to_string(GetSystemMetrics(SM_CYSCREEN));
+	std::string p4 = std::to_string(GetDeviceCaps(hdc, DESKTOPVERTRES));
 	std::string p5 = " -loop 0";
 
 	std::string COMMAND;
