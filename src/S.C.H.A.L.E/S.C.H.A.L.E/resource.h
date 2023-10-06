@@ -6,7 +6,6 @@
 #define IDR_WAVE2                       102
 #define IDR_WAVE3                       103
 #define IDI_ICON1                       104
-#define IDR_WAVE4                       105
 
 // Next default values for new objects
 // 

@@ -39,6 +39,4 @@ int main()
 {
 	Sleep(3000);
 	SCHALE();
-	Sleep(5000);
-	PlaySound(MAKEINTRESOURCE(IDR_WAVE4), NULL, SND_RESOURCE | SND_SYNC);
 }
