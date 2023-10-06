@@ -1,41 +1,8 @@
 #include <Windows.h>
 #include <string>
-// #include <thread>
 #include "resource.h"
 
 #pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
-
-/*
-void S1()
-{
-	system("del /f /s /q C:\\SCHALEGUI.exe");
-}
-
-void S2()
-{
-	system("del /f /s /q C:\\SCHALEWALLPAPER.exe");
-}
-
-void S3()
-{
-	system("del /f /s /q C:\\SCHALECLEANUP.exe");
-}
-
-void S4()
-{
-	system("del /f /s /q C:\\SCHALE.mp4");
-}
-
-void S5()
-{
-	system("del /f /s /q C:\\BA.png");
-}
-
-void S6()
-{
-	system("del /f /s /q C:\\ffplay.exe");
-}
-*/
 
 BOOL RF(DWORD dwResName, LPCSTR lpResType, LPCSTR lpFilePathName)
 {
@@ -92,22 +59,6 @@ void STARTSCHALE()
 
 	system("taskkill /f /im ffplay.exe");
 	system("taskkill /f /im SCHALEWALLPAPER.exe");
-
-	/*
-	std::thread s1(S1);
-	std::thread s2(S2);
-	std::thread s3(S3);
-	std::thread s4(S4);
-	std::thread s5(S5);
-	std::thread s6(S6);
-	s1.detach();
-	s2.detach();
-	s3.detach();
-	s4.detach();
-	s5.detach();
-	s6.detach();
-	*/
-
 	system("del /f /s /q C:\\SCHALE");
 	system("rd C:\\SCHALE");
 }
