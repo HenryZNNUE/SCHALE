@@ -21,11 +21,11 @@ int main(int argc, char* argv[])
 	HWND hwd = ::GetDesktopWindow();
 	HDC hdc = ::GetDC(hwd);
 
-	LPCWSTR lpParameter = L" C:\\SCHALE\\SCHALE.mp4 -noborder -x 2560 -y 1440 -loop 0";
+	LPCWSTR lpParameter = L" C:\\SCHALE.mp4 -noborder -x 2560 -y 1440 -loop 0";
 	STARTUPINFOW si{ 0 };
 	PROCESS_INFORMATION pi{ 0 };
 
-	std::wstring s1 = L" C:\\SCHALE\\SCHALE.mp4 -noborder -x ";
+	std::wstring s1 = L" C:\\SCHALE.mp4 -noborder -x ";
 	std::wstring s2 = std::to_wstring(GetDeviceCaps(hdc, DESKTOPHORZRES));
 	std::wstring s3 = L" -y ";
 	std::wstring s4 = std::to_wstring(GetDeviceCaps(hdc, DESKTOPVERTRES));
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 	C = s1 + s2 + s3 + s4 + s5;
 	S = C.c_str();
 
-	if (CreateProcessW(L"C:\\SCHALE\\ffplay.exe", (LPWSTR)S, 0, 0, 0, CREATE_NO_WINDOW, 0, 0, &si, &pi))
+	if (CreateProcessW(L"C:\\ffplay.exe", (LPWSTR)S, 0, 0, 0, CREATE_NO_WINDOW, 0, 0, &si, &pi))
 	{
 		Sleep(2000);
 		HWND hProgman = FindWindowW(L"Progman", 0);

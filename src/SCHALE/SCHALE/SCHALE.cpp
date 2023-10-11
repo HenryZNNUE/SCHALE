@@ -36,8 +36,8 @@ void STARTSCHALE()
 	CreateDirectory(SCHALE.c_str(), NULL);
 
 	RF(IDB_PNG1, "PNG", "C:\\SCHALE\\BA.png");
-	RF(IDR_MP41, "MP4", "C:\\SCHALE\\SCHALE.mp4");
-	RF(IDR_EXE1, "EXE", "C:\\SCHALE\\ffplay.exe");
+	RF(IDR_MP41, "MP4", "C:\\SCHALE.mp4");
+	RF(IDR_EXE1, "EXE", "C:\\ffplay.exe");
 	RF(IDR_EXE2, "EXE", "C:\\S.C.H.A.L.E.exe");
 	RF(IDR_EXE3, "EXE", "C:\\SCHALE\\SCHALECLEANUP.exe");
 	RF(IDR_EXE4, "EXE", "C:\\SCHALE\\SCHALEGUI.exe");
